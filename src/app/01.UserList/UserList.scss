@@ -1,0 +1,14 @@
+.user-list {
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    .logo-page {
+        width: 400px;
+        height: 400px;
+    }
+    .user {
+        text-decoration: none;
+        color: black;
+        cursor: pointer;
+    }
+}

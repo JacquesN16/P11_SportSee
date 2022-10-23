@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../P9-front-end-dashboard-master/.idea/P9-front-end-dashboard-master.iml" filepath="$PROJECT_DIR$/../P9-front-end-dashboard-master/.idea/P9-front-end-dashboard-master.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/sport_see_front.iml" filepath="$PROJECT_DIR$/.idea/sport_see_front.iml" />
     </modules>
   </component>

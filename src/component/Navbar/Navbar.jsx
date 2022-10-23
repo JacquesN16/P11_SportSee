@@ -12,7 +12,7 @@ export default function Navbar () {
                 <img src={logo} alt="" />
             </div>
             <Link className="nav-link" to="/">
-                Acceuil
+                Accueil
             </Link>
             <Link className="nav-link" to={route.profile}>
                 Profil
