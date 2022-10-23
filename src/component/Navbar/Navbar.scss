@@ -1,0 +1,19 @@
+@import '../../variables';
+
+.nav-bar {
+    font-family: inherit;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    height: 91px;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 40px;
+    .nav-link {
+        color: white;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 24px;
+        text-decoration: none;
+    }
+}
