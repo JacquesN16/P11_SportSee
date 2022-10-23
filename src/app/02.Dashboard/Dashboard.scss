@@ -1,0 +1,48 @@
+.main-container {
+    margin: auto;
+    padding: 20px;
+    .profile {
+        font-family: Roboto;
+        h1 {
+            font-size: 48px;
+            span {
+                color: red;
+            }
+        }
+        p {
+            padding-bottom: 20px;
+            font-size: 18px;
+        }
+    }
+    .container {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+
+        @media (max-width: 1400px) {
+            gap: 15px;
+        }
+        .container-chart {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            @media (max-width: 1400px) {
+                gap: 15px;
+            }
+            .cards-info {
+                display: flex;
+                flex-direction: row;
+                gap: 30px;
+                @media (max-width: 1400px) {
+                    gap: 15px;
+                }
+            }
+        }
+        .container-information {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 30px;
+        }
+    }
+}
