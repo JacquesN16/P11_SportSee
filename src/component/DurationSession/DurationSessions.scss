@@ -1,0 +1,30 @@
+@import '../../variables';
+.duration-session {
+    background-color: $color-red;
+    border: $border-red;
+    color: white;
+    border-radius: 5px;
+    width: 100%;
+    height: 250px;
+
+    .durationSessions-header {
+        padding-left: 3px;
+        font-size: 15px;
+        text-align: left;
+        max-width: 150px;
+        line-height: 21px;
+    }
+    .duration-chart {
+        width: 100%;
+        .tool {
+            font-size: 12px;
+            background-color: white;
+            color: black;
+            padding: 8px;
+        }
+        .line-information {
+            color: white;
+            background-color: white;
+        }
+    }
+}

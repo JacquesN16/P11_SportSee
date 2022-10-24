@@ -40,7 +40,7 @@ export function Activity (props) {
 
         try{
             const res = await mainApi.getUserActivity(id)
-            setData(res)
+            setData(res.data.sessions)
         } catch (err) {
             console.log(err)
             alert('Error')
@@ -90,7 +90,7 @@ export function Activity (props) {
                         dy={1}
                         axisLine={false}
                         tickLine={false}
-                        tickFormatter={()=>getDayNumber(new Date())}
+                        tickFormatter={getDayNumber}
                     />
                     <YAxis
                         dataKey="calories"

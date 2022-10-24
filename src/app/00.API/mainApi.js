@@ -22,4 +22,13 @@ export default class mainApi {
 
         return res.data
     }
+
+    static async getUserAverageSession(id){
+        const res = await axios({
+            method:'get',
+            url: CONFIG.baseURL + `/user/${id}/average-sessions`
+        })
+
+        return res.data
+    }
 }

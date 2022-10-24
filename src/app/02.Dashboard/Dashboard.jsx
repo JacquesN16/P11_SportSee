@@ -7,6 +7,7 @@ import { useNavigate, useParams } from 'react-router'
 // import InformationList from '../components/Information/InformationList'
 import mainApi from "../00.API/mainApi";
 import {Activity} from "../../component/Activity/Activity";
+import DurationSessions from "../../component/DurationSession/DurationSessions";
 
 
 export default function Dashboard (){
@@ -45,7 +46,7 @@ export default function Dashboard (){
                 <article className="container-chart">
                     <Activity userId={userInfo?.id} />
                     <div className="cards-info">
-                        {/*<DurationSessions userId={userInfo?.userId} />*/}
+                        <DurationSessions userId={userInfo?.id} />
                         {/*<Performance userId={parseInt(userInfo?.userId)} />*/}
                         {/*<Score userId={userInfo?.userId} />*/}
                     </div>
