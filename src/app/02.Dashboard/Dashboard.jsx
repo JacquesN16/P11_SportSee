@@ -9,6 +9,8 @@ import mainApi from "../00.API/mainApi";
 import {Activity} from "../../component/Activity/Activity";
 import DurationSessions from "../../component/DurationSession/DurationSessions";
 import InformationList from "../../component/InformationList/InformationList";
+import {Score} from "../../component/Score/Score";
+import Performance from "../../component/Performance/Performance";
 
 
 export default function Dashboard (){
@@ -16,6 +18,7 @@ export default function Dashboard (){
 
 
     const [userInfo, setUserInfo] = useState()
+    const [completionScore, setCompletionScore] = useState()
 
     const getUserByID = async (id) => {
         if(!id){
@@ -25,8 +28,9 @@ export default function Dashboard (){
         try{
             const res = await mainApi.getUserByID(id)
             setUserInfo(res.data)
+            setCompletionScore(res.data.todayScore ? res.data.todayScore : res.data.score)
         } catch (err) {
-            console.log('Error')
+            console.log(err)
         }
     }
 
@@ -48,8 +52,8 @@ export default function Dashboard (){
                     <Activity userId={userInfo?.id} />
                     <div className="cards-info">
                         <DurationSessions userId={userInfo?.id} />
-                        {/*<Performance userId={parseInt(userInfo?.userId)} />*/}
-                        <Score userId={userInfo?.userId} />
+                        <Performance userId={userInfo?.id} />
+                        <Score userId={userInfo?.id} completionScore={completionScore} />
                     </div>
                 </article>
                 <article className="container-information">

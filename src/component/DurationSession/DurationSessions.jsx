@@ -22,7 +22,7 @@ export default function DurationSessions (props) {
 
         try{
             const res = await mainApi.getUserAverageSession(id)
-            console.log(res)
+
             setData(res.data.sessions)
         } catch(err){
             console.log(err)

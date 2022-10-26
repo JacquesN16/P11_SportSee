@@ -31,4 +31,13 @@ export default class mainApi {
 
         return res.data
     }
+
+    static async getUserPerformance (id) {
+        const res = await axios({
+            method:'get',
+            url: CONFIG.baseURL + `/user/${id}/performance`
+        })
+
+        return res.data
+    }
 }
