@@ -12,6 +12,7 @@ import {
     ResponsiveContainer,
 } from 'recharts'
 import mainApi from "../../app/00.API/mainApi";
+import Loader from "../Loader/Loader";
 
 
 
@@ -54,7 +55,7 @@ export function Activity (props) {
     }, [props.userId])
 
     if (!data) {
-        return <div>loading</div>
+        return <Loader isLoading={true}/>
     }
 
     return (

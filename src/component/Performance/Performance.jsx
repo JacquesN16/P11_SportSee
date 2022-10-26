@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './Performance.scss'
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis } from 'recharts'
 import mainApi from "../../app/00.API/mainApi";
+import Loader from "../Loader/Loader";
 
 const ACTIVITY_TYPE = {
     1: 'Intensité',
@@ -47,7 +48,7 @@ export default function Performance (props)  {
         getUserPerformance(props.userId)
     }, [props.userId])
 
-    if (!data) return <div>loading</div>
+    if (!data) return <Loader isLoading={true}/>
 
     return (
         <RadarChart
