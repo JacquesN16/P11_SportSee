@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from 'react'
-// import DurationSessions from '../components/DurationSessions/DurationSessions'
-// import Performance from '../components/Performance/Performance'
 import './Dashboard.scss'
-// import Score from '../components/Score/Score'
-import { useNavigate, useParams } from 'react-router'
-// import InformationList from '../components/Information/InformationList'
+import { useParams } from 'react-router'
+
 import mainApi from "../00.API/mainApi";
 import {Activity} from "../../component/Activity/Activity";
 import DurationSessions from "../../component/DurationSession/DurationSessions";
@@ -16,11 +13,8 @@ import Loader from "../../component/Loader/Loader";
 
 export default function Dashboard (){
     const params = useParams()
-
-
     const [userInfo, setUserInfo] = useState()
     const [completionScore, setCompletionScore] = useState()
-
 
     const getUserByID = async (id) => {
         if(!id){

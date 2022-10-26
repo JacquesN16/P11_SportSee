@@ -22,11 +22,9 @@ export function  UserList () {
     return (
         <div className="user-list">
             <div className="user-list-card">
-                <div className="user-list-title">
-                    <h1>Selectionez votre profil</h1>
-                </div>
+
                 <div className="user-list-form">
-                    <label>Entrez votre nom </label>
+                    <label><h2>Entrez votre nom </h2></label>
                     <input
                         type="text"
                         value={userName}
@@ -34,6 +32,9 @@ export function  UserList () {
                     />
                 </div>
                 <div className="user-list-item-container">
+                    <div className="user-list-title">
+                        <h4>Selectionez votre profil</h4>
+                    </div>
                     {USER_LIST && USER_LIST.map((user,idx)=>{
                         return(<>
                             {userName.toLowerCase() === user.firstName.toLowerCase()
