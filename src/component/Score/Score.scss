@@ -1,0 +1,36 @@
+.score {
+    border-radius: 5px;
+    background-color: #fbfbfb;
+    height: 250px;
+    border-radius: 5px;
+    position: relative;
+
+    .score-header {
+        font-size: 15px;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        font-size: 18px;
+    }
+    .score-chart {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 20px;
+
+        .score-info {
+            position: absolute;
+            background-color: white;
+            .score-value {
+                font-size: 26px;
+                font-weight: 700;
+            }
+            .score-text {
+                font-size: 16px;
+                font-weight: 500;
+                color: #9b9eac;
+            }
+        }
+    }
+}

@@ -4,18 +4,9 @@ import { ReactComponent as Calorie } from './icons/calorie.svg'
 import { ReactComponent as Protein } from './icons/protein.svg'
 import { ReactComponent as Lipide } from './icons/lipide.svg'
 import { ReactComponent as Glucide } from './icons/glucide.svg'
-import PropTypes from 'prop-types'
 
-/**@function for showing cards
- * @component
- * @param {number} calorie
- * @param {number} protein
- * @param {number} lipid
- * @param {number} glucoside
- * @returns (<InformationList/>)
- */
 
-const InformationList = (props) => {
+export default function InformationList (props){
     return (
         <>
             <Information
@@ -42,11 +33,6 @@ const InformationList = (props) => {
     )
 }
 
-export default InformationList
 
-InformationList.propTypes = {
-    calorie: PropTypes.number,
-    lipid: PropTypes.number,
-    protein: PropTypes.number,
-    glucoside: PropTypes.number,
-}
+
+
