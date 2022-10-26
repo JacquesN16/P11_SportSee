@@ -38,7 +38,7 @@ export default function Dashboard (){
         <main className="main-container">
             <section className="profile">
                 <h1>
-                    Bonjour <span>{userInfo?.name}</span>
+                    Bonjour <span>{userInfo?.userInfos.firstName}</span>
                 </h1>
                 <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
             </section>
