@@ -4,16 +4,6 @@ import { Radar, RadarChart, PolarGrid, PolarAngleAxis } from 'recharts'
 import mainApi from "../../app/00.API/mainApi";
 import Loader from "../Loader/Loader";
 
-const ACTIVITY_TYPE = {
-    1: 'Intensité',
-    2: 'Vitesse',
-    3: 'Force',
-    4: 'Endurance',
-    5: 'Energie',
-    6: 'Cardio',
-}
-
-
 
 export default function Performance (props)  {
 

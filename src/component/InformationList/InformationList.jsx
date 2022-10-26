@@ -12,22 +12,22 @@ export default function InformationList (props){
             <Information
                 icon={<Calorie />}
                 title="Calories"
-                value={`${props.calorie}kCal`}
+                value={`${props.calorie} kCal`}
             />
             <Information
                 icon={<Protein />}
                 title="Proteins"
-                value={`${props.protein}g`}
+                value={`${props.protein} g`}
             />
             <Information
                 icon={<Glucide />}
-                title="Glucide"
-                value={`${props.glucoside}g`}
+                title="Glucides"
+                value={`${props.glucoside} g`}
             />
             <Information
                 icon={<Lipide />}
                 title="Lipides"
-                value={`${props.lipid}g`}
+                value={`${props.lipid} g`}
             />
         </>
     )
