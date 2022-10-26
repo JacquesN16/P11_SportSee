@@ -8,6 +8,7 @@ import { useNavigate, useParams } from 'react-router'
 import mainApi from "../00.API/mainApi";
 import {Activity} from "../../component/Activity/Activity";
 import DurationSessions from "../../component/DurationSession/DurationSessions";
+import InformationList from "../../component/InformationList/InformationList";
 
 
 export default function Dashboard (){
@@ -48,16 +49,16 @@ export default function Dashboard (){
                     <div className="cards-info">
                         <DurationSessions userId={userInfo?.id} />
                         {/*<Performance userId={parseInt(userInfo?.userId)} />*/}
-                        {/*<Score userId={userInfo?.userId} />*/}
+                        <Score userId={userInfo?.userId} />
                     </div>
                 </article>
                 <article className="container-information">
-                    {/*<InformationList*/}
-                    {/*    calorie={userInfo?.calorie}*/}
-                    {/*    protein={userInfo?.protein}*/}
-                    {/*    glucoside={userInfo?.glucoside}*/}
-                    {/*    lipid={userInfo?.lipid}*/}
-                    {/*/>*/}
+                    <InformationList
+                        calorie={userInfo?.keyData.calorieCount}
+                        protein={userInfo?.keyData.proteinCount}
+                        glucoside={userInfo?.keyData.carbohydrateCount}
+                        lipid={userInfo?.keyData.lipidCount}
+                    />
                 </article>
             </section>
         </main>
