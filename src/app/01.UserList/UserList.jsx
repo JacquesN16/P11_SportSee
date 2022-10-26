@@ -19,14 +19,6 @@ export function  UserList () {
         }
     ]
 
-    const handleUserNameChange = (username) => {
-        setUserName(username)
-        if(username === "Karl"){
-
-        }
-
-    }
-
     return (
         <div className="user-list">
             <div className="user-list-card">
@@ -38,7 +30,7 @@ export function  UserList () {
                     <input
                         type="text"
                         value={userName}
-                        onChange={(e)=>handleUserNameChange(e.target.value)}
+                        onChange={(e)=>setUserName(e.target.value)}
                     />
                 </div>
                 <div className="user-list-item-container">
