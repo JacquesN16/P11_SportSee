@@ -3,6 +3,10 @@ export const route = {
     profile: "/profil",
     setting: "/reglage",
     community:"/community",
-    user:'/user'
-
+    user:'/user',
+    yoga: "/yoga",
+    swimming: "/swimming",
+    biking: "/biking",
+    bodyBuilding: "/bodyBuilding",
+    profil: "/profil",
 }
