@@ -3,7 +3,7 @@ import './DurationSessions.scss'
 import { LineChart, Line, XAxis, Tooltip } from 'recharts'
 import {constant} from "../../constant/constant";
 import mainApi from "../../app/00.API/mainApi";
-
+const defaultData = []
 
 
 
@@ -22,8 +22,9 @@ export default function DurationSessions (props) {
 
         try{
             const res = await mainApi.getUserAverageSession(id)
-
-            setData(res.data.sessions)
+            if (!!res && !!res.data.sessions){
+                setData(res.data.sessions)
+            }
         } catch(err){
             console.log(err)
         }
@@ -60,14 +61,14 @@ export default function DurationSessions (props) {
 
                 <Tooltip
                     content={(pointInfo) => {
-                        if (!pointInfo.active) return null
+                        if (!pointInfo.active || !data) return null
                         const pointData = data.find(
                             (x) => x.day === pointInfo.label
                         )
 
                         return (
                             <div className="tool">
-                                {pointData.sessionLength} min
+                                {pointData ? pointData.sessionLength : 0} min
                             </div>
                         )
                     }}

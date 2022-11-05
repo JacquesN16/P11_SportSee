@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import './Dashboard.scss'
-import { useParams } from 'react-router'
+import {useNavigate, useParams} from 'react-router'
 import mainApi from "../00.API/mainApi";
 import {Activity} from "../../component/Activity/Activity";
 import DurationSessions from "../../component/DurationSession/DurationSessions";
 import InformationList from "../../component/InformationList/InformationList";
 import {Score} from "../../component/Score/Score";
 import Performance from "../../component/Performance/Performance";
-import Loader from "../../component/Loader/Loader";
 import {defaultData} from "./defaultData";
 
 export default function Dashboard (){
     const params = useParams()
+    const navigate = useNavigate()
     const [userInfo, setUserInfo] = useState(defaultData.data)
     const [completionScore, setCompletionScore] = useState(defaultData.data.todayScore)
 
@@ -23,21 +23,18 @@ export default function Dashboard (){
         try{
             const res = await mainApi.getUserByID(id)
             if (res) {
-                console.log(res.data)
                 setUserInfo(res.data)
                 setCompletionScore(res.data.todayScore ? res.data.todayScore : res.data.score)
             }
         } catch (err) {
             console.log(err)
+            navigate('/404')
         }
     }
 
     useEffect(() => {
-
         getUserByID(params.id)
     }, [params.id])
-
-    //if(!userInfo) return <Loader isLoading={true}/>
 
     return (<>
 

@@ -2,9 +2,7 @@
     text-align: center;
     width: 100%;
     margin: auto;
-    .user-list-card{
 
-    }
 
     .logo-page {
         width: 400px;
@@ -15,4 +13,30 @@
         color: black;
         cursor: pointer;
     }
+    .user-list-title{
+        color:red
+    }
+    .user-list-item-container{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        .user-list-item{
+            cursor: pointer;
+            background: #f1f1f1;
+            border-radius: 5px;
+            max-width: 280px;
+            padding: 15px;
+            display: grid;
+            box-shadow: 0 2px 4px 0 rgba(219, 215, 215, 0.04);
+            transition: ease-in-out 0.5s;
+            border: solid 2px #e3e3e3;
+            margin: 5px;
+            &:hover{
+                background: #fafafa;
+                border: solid black 1px;
+            }
+
+        }
+    }
+
 }

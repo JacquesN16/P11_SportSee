@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom'
 import {route} from "../../constant/route";
 
 export function  UserList () {
-    const [userName, setUserName] = useState('')
-
     const USER_LIST = [
         {
             id: 12,
@@ -22,18 +20,19 @@ export function  UserList () {
     return (
         <div className="user-list">
             <div className="user-list-card">
+                <div className="user-list-title">
+                    <h2>Selectionez votre profil</h2>
+                </div>
+
                 <div className="user-list-item-container">
-                    <div className="user-list-title">
-                        <h4>Selectionez votre profil</h4>
-                    </div>
                     {USER_LIST && USER_LIST.map((user,idx)=>{
-                        return(<>
-                         <div className="user-list-item">
+                        return(
+                         <div key={idx} className="user-list-item">
                             <Link to={`${route.user}/${user.id}`} className="user">
                                 <h2>{user.firstName} {user.lastName}</h2>
                             </Link>
                         </div>
-                        </>)
+                        )
                     })}
                 </div>
 
