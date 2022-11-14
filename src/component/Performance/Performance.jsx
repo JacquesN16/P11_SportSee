@@ -3,8 +3,13 @@ import './Performance.scss'
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis } from 'recharts'
 import mainApi from "../../app/00.API/mainApi";
 import Loader from "../Loader/Loader";
+import PropTypes from "prop-types";
 
-
+/**@function display activity data types as a radar chart
+ * @component
+ * @param {number} userId
+ * @returns (<Performance/>)
+ */
 export default function Performance (props)  {
 
     const [data, setData] = useState()
@@ -68,4 +73,6 @@ export default function Performance (props)  {
     )
 }
 
-
+Performance.propTypes = {
+    userId: PropTypes.number,
+}

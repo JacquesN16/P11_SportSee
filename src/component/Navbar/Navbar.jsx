@@ -4,6 +4,11 @@ import { Link } from 'react-router-dom'
 import {route} from "../../constant/route";
 
 
+/**@function Component navbar
+ *@component
+ *
+ * @returns (<Navbar/>)
+ */
 export default function Navbar () {
 
     return (

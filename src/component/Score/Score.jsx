@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { PieChart, Pie, Cell } from 'recharts'
 import './Score.scss'
+import PropTypes from "prop-types";
 
-
+/**@function  display score as a pie chat
+ * @component
+ * @param {number } userId
+ * @returns( <Score/>)
+ */
 
 export function Score  (props)  {
     return (
@@ -37,3 +42,6 @@ export function Score  (props)  {
     )
 }
 
+Score.propTypes = {
+    userId: PropTypes.number,
+}

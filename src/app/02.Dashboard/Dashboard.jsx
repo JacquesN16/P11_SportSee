@@ -9,6 +9,11 @@ import {Score} from "../../component/Score/Score";
 import Performance from "../../component/Performance/Performance";
 import {defaultData} from "./defaultData";
 
+/**@function display the dashboard on main page
+ *
+ * @returns (<Dashboard/>)
+ */
+
 export default function Dashboard (){
     const params = useParams()
     const navigate = useNavigate()

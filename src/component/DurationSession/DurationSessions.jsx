@@ -3,10 +3,14 @@ import './DurationSessions.scss'
 import { LineChart, Line, XAxis, Tooltip } from 'recharts'
 import {constant} from "../../constant/constant";
 import mainApi from "../../app/00.API/mainApi";
-const defaultData = []
+import PropTypes from "prop-types";
 
 
-
+/**function  display  duration session data on the chart
+ *@component
+ * @param {number} userId
+ * @return  (<DurationSessions/>)
+ */
 
 export default function DurationSessions (props) {
     const [data, setData] = useState([])
@@ -87,4 +91,6 @@ export default function DurationSessions (props) {
     )
 }
 
-
+DurationSessions.propTypes = {
+    userId: PropTypes.number,
+}

@@ -3,6 +3,12 @@ import './UserList.scss'
 import { Link } from 'react-router-dom'
 import {route} from "../../constant/route";
 
+
+/**@function display user list
+ *
+ * @returns (<UserList/>)
+ */
+
 export function  UserList () {
     const USER_LIST = [
         {

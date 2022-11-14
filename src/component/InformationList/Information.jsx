@@ -1,7 +1,14 @@
 import React from 'react'
 import './Information.scss'
+import PropTypes from "prop-types";
 
-
+/**function  card information
+ * @component
+ * @param {element}  icon svg
+ * @param {number} value
+ * @param {string} title
+ * @returns (<Information/>)
+ */
 export default function Information (props) {
     return (
         <div className="information">
@@ -12,6 +19,12 @@ export default function Information (props) {
             </div>
         </div>
     )
+}
+
+Information.propTypes = {
+    icon: PropTypes.element.isRequired,
+    title: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired,
 }
 
 

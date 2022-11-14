@@ -2,7 +2,10 @@ import React from 'react'
 import './ErrorPage.scss'
 import { Link } from 'react-router-dom'
 
-
+/**@function display when user go to an undefined page
+ *
+ * @returns (<ErrorPage/>)
+ */
 export default function ErrorPage () {
     return (
         <div className="error-page">

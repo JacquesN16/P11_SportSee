@@ -13,12 +13,24 @@ import {
 } from 'recharts'
 import mainApi from "../../app/00.API/mainApi";
 import Loader from "../Loader/Loader";
+import PropTypes from "prop-types";
 
 
+/**function display the bar chart activity
+ *@component
+ * @param {number} userId
+ * @returns (bar chart <Activity/>)
+ */
 
 export function Activity (props) {
     const [data, setData] = useState()
 
+
+    /**@function display custom tooltip on mouse hover
+     *
+     * @param {*} param0
+     * @returns (custom tooltip)
+     */
     const CustomTooltip = ({ active, payload }) => {
         return active && payload ? (
             <div className="tool-tip">
@@ -28,12 +40,22 @@ export function Activity (props) {
         ) : null
     }
 
-
+    /**@function get day number of a week
+     *
+     * @param {string} date
+     * @returns {number} of day
+     */
     const getDayNumber = (date) => {
         const objetDate = new Date(date)
         return objetDate.getDate()
     }
 
+
+    /**@function get data for user activity
+     *
+     * @param {number} id
+     * @returns data
+     */
     const getUserActivity = async (id) => {
         if(!id){
             return
@@ -120,4 +142,6 @@ export function Activity (props) {
     )
 }
 
-
+Activity.propTypes = {
+    userId: PropTypes.number,
+}
