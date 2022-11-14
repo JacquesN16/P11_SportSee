@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: component/DurationSession/DurationSessions.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: component/DurationSession/DurationSessions.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React, { useEffect, useState } from 'react'
+import './DurationSessions.scss'
+import { LineChart, Line, XAxis, Tooltip } from 'recharts'
+import {constant} from "../../constant/constant";
+import mainApi from "../../app/00.API/mainApi";
+import PropTypes from "prop-types";
+
+
+/**function  display  duration session data on the chart
+ *@component
+ * @param {number} userId
+ * @return  (&lt;DurationSessions/>)
+ */
+
+export default function DurationSessions (props) {
+    const [data, setData] = useState([])
+
+    const getDay = (indexDay) => {
+        return constant.days[indexDay]
+    }
+
+    const getUserAverageSession = async(id) =>{
+        if(!id){
+            return
+        }
+
+        try{
+            const res = await mainApi.getUserAverageSession(id)
+            if (!!res &amp;&amp; !!res.data.sessions){
+                setData(res.data.sessions)
+            }
+        } catch(err){
+            console.log(err)
+        }
+
+    }
+    useEffect(() => {
+        getUserAverageSession(props.userId)
+    }, [props.userId])
+
+    return (
+        &lt;div className="duration-session">
+            &lt;header className="durationSessions-header">
+                &lt;h1> Durée moyenne des sessions &lt;/h1>
+            &lt;/header>
+            &lt;LineChart
+                className="duration-chart"
+                width={250}
+                height={150}
+                data={data}
+                margin={{
+                    top: 5,
+                    right: 0,
+                    left: 20,
+                    bottom: 0,
+                }}
+            >
+                &lt;XAxis
+                    dataKey="day"
+                    stroke="#FFF"
+                    tickLine={false}
+                    dy={2}
+                    tickFormatter={getDay}
+                />
+
+                &lt;Tooltip
+                    content={(pointInfo) => {
+                        if (!pointInfo.active || !data) return null
+                        const pointData = data.find(
+                            (x) => x.day === pointInfo.label
+                        )
+
+                        return (
+                            &lt;div className="tool">
+                                {pointData ? pointData.sessionLength : 0} min
+                            &lt;/div>
+                        )
+                    }}
+                />
+
+                &lt;Line
+                    className="line-information"
+                    type="monotone"
+                    dataKey="sessionLength"
+                    stroke="white"
+                    dot={false}
+                    activeDot={{ r: 7 }}
+                />
+            &lt;/LineChart>
+        &lt;/div>
+    )
+}
+
+DurationSessions.propTypes = {
+    userId: PropTypes.number,
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#Activity">Activity</a></li><li><a href="global.html#Componentnavbar">Component navbar</a></li><li><a href="global.html#displayactivitydatatypesasaradarchart">display activity data types as a radar chart</a></li><li><a href="global.html#displayasareplacementforupcomingpage">display as a replacement for upcoming page</a></li><li><a href="global.html#displaycustomtooltiponmousehover">display custom tooltip on mouse hover</a></li><li><a href="global.html#displayscoreasapiechat">display score as a pie chat</a></li><li><a href="global.html#displaysidebarfornavigation">display side bar for navigation</a></li><li><a href="global.html#displaythedashboardonmainpage">display the dashboard on main page</a></li><li><a href="global.html#displayuserlist">display user list</a></li><li><a href="global.html#displaywhenusergotoanundefinedpage">display when user go to an undefined page</a></li><li><a href="global.html#forshowingcards">for showing cards</a></li><li><a href="global.html#getdataforuseractivity">get data for user activity</a></li><li><a href="global.html#getdaynumberofaweek">get day number of a week</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Mon Nov 14 2022 22:45:51 GMT+0100 (Central European Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
